@@ -24,13 +24,14 @@
   function updateWebsite() {
     var name = document.getElementById("name").value;
     var userContent = document.getElementById("userContent").value;
-    var content = "This website was last edited by " + name + "\n\n" + userContent;
+    var currentContent = document.getElementById("content").innerText;
+    var newContent = currentContent + "\n\n" + name + ": " + userContent;
 
     // Save the content in localStorage
-    localStorage.setItem('websiteContent', content);
+    localStorage.setItem('websiteContent', newContent);
 
     // Display the content on the page
-    document.getElementById("content").innerText = content;
+    document.getElementById("content").innerText = newContent;
   }
 
   // Load initial content from localStorage
