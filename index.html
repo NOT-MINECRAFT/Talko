@@ -12,6 +12,9 @@
 <label for="name">Your Name:</label>
 <input type="text" id="name" placeholder="Enter your name">
 
+<label for="userContent">Edit Content:</label>
+<textarea id="userContent" placeholder="Type your content here"></textarea>
+
 <button onclick="updateWebsite()">Submit</button>
 
 <div id="content"></div>
@@ -20,7 +23,8 @@
   // Function to update the website content
   function updateWebsite() {
     var name = document.getElementById("name").value;
-    var content = "This website was last edited by " + name;
+    var userContent = document.getElementById("userContent").value;
+    var content = "This website was last edited by " + name + "\n\n" + userContent;
 
     // Save the content in localStorage
     localStorage.setItem('websiteContent', content);
